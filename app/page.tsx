@@ -9,6 +9,7 @@ import SearchButton from "./components/Body/SearchButton";
 import Card from "./components/Cards/Card";
 import "./globals.css";
 import CardContainer from "./components/Cards/CardContainer";
+import Property from "./components/Body/Property";
 import Script from "next/script";
 
 export default function Home() {
@@ -24,6 +25,8 @@ export default function Home() {
           <FindProperty />
           <Button />
           <SearchButton />
+
+          {/* <Property></Property> */}
         </div>
         <div>
           <CardContainer />
