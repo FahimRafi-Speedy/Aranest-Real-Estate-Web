@@ -1,0 +1,42 @@
+/* Body Part CSS */
+
+.searchButton {
+  background: linear-gradient(to right, #000000, #434343);
+}
+
+.searchButton:hover {
+  background: linear-gradient(to right, #2BA5FF, #53E6F1);
+  transition: ease-in-out 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+/* @media (max-height: 900px) {
+  .mt-variable {
+    margin-top: 6rem;
+  }
+}
+
+@media (max-height: 800px) {
+  .mt-variable {
+    margin-top: 5rem;
+  }
+}
+
+@media (max-height: 700px) {
+  .mt-variable {
+    margin-top: 4rem;
+  }
+}
+
+@media (max-height: 600px) {
+  .mt-variable {
+    margin-top: 3rem;
+  }
+}
+
+@media (max-height: 500px) {
+  .mt-variable {
+    margin-top: 2rem;
+  }
+} */

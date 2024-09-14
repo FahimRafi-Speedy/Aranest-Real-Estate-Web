@@ -1,0 +1,94 @@
+.card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  padding-bottom: 3rem;
+  max-width: 24rem;
+  text-align: center;
+  margin: 1rem 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* Required for absolute positioning of button */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.content {
+  background-color: #f0f0f0; /* Light gray background */
+  color: black;
+  border-radius: 15px;
+  padding: 0rem 1rem 0rem 1rem;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 200px;
+}
+
+.imageContainer {
+  width: 120px;
+  height: 120px;
+  padding: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  overflow: hidden;
+  position: absolute;
+  top: -4rem; /* Moves half of the image container outside the card */
+  left: 50%;
+  transform: translateX(-50%); /* Centers the image container */
+}
+
+.image {
+  object-fit: contain;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000000;
+  margin-top: 5rem; /* Adjust to compensate for the image overlap */
+}
+
+.description {
+  font-size: 1rem;
+  color: #666666;
+  margin: 1rem 0;
+  padding-bottom: 4rem; /* Adjust to leave space for the button */
+}
+
+.button {
+  background: linear-gradient(to right, #000000, #434343);
+
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 0.8rem 1.5rem; /* Adjust padding to add space inside */
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 12rem; /* Adjusts the width to fit the content */
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  transform-origin: center; /* Ensures scaling happens from the center */
+}
+
+.button:hover {
+  background: linear-gradient(to right, #2BA5FF, #53E6F1);
+  transform: translateX(-50%) scale(1.05); /* Keep translateX to center */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+  transform: translateX(-50%) scale(0.95); /* Ensure the centering is retained */
+}
