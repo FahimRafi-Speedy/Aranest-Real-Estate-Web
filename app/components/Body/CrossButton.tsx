@@ -11,6 +11,7 @@ const CrossButton: React.FC<CrossButtonProps> = ({ onClick, isVisible }) => {
     <RxCross2
       onClick={onClick}
       className="text-3xl ml-2 cursor-pointer"
+      title="Clear"
     />
   ) : null;
 };

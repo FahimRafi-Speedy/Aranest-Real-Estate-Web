@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   // Data for the left and right section links
-  const leftLinks = ["About", "Advertising", "Business", "How Search works"];
+  const leftLinks = ["About", "Advertising", "Business", "How Search Works"];
   const rightLinks = ["Privacy", "Terms", "Settings"];
 
   // Common classes for the links

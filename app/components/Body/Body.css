@@ -11,6 +11,80 @@
 
 }
 
+/* Gradient background for the OK button */
+.ok-button {
+  background: linear-gradient(to right, #000000, #434343);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-weight: bold;
+}
+
+.ok-button:hover {
+  background: linear-gradient(to right, #2BA5FF, #53E6F1);
+  /* transition: ease-in-out 0.3s; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+/* Outer Container */
+.map-modal-outer {
+  background-color: #f8f8f8;
+  border-radius: 10px; /* Rounded edges */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow effect */
+  margin: 20px auto; /* Center horizontally and add margin */
+  padding: 20px; /* Padding inside the outer container */
+  max-width: 700px; /* Set a maximum width */
+  width: 90%; /* Make it responsive to different widths */
+  height: auto; /* Allow the height to adjust automatically */
+  max-height: 80vh; /* Maximum height relative to the viewport */
+  overflow: auto; /* Enable scrolling if content exceeds available space */
+  position: relative; /* Ensure proper positioning */
+  top: 20px; /* Position from the top */
+  border: none; /* Ensure no border */
+  outline: none; /* Ensure no outline */
+}
+
+/* Inner Map Container */
+.map-modal-inner {
+  border-radius: 10px; /* Rounded edges for the inner map container */
+  overflow: hidden; /* Prevent overflow beyond rounded edges */
+  height: 100%; /* Full height of the outer container */
+  width: 100%; /* Full width of the outer container */
+  max-height: 500px; /* Maximum height in pixels */
+  border: none; /* Ensure no border */
+  outline: none; /* Ensure no outline */
+}
+
+/* Apply styles to the map within the inner container */
+.google-map-container {
+  height: 100%; /* Full height of the inner container */
+  width: 100%; /* Full width of the inner container */
+  border: none; /* Ensure no border */
+  outline: none; /* Ensure no outline */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* @media (max-height: 900px) {
   .mt-variable {
     margin-top: 6rem;

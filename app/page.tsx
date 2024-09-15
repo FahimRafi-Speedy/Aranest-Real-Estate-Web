@@ -23,8 +23,8 @@ export default function Home() {
         <div className="scale-wrapper">
           <Header />
           <FindProperty />
-          <Button />
-          <SearchButton />
+          {/* <Button /> */}
+          {/* <SearchButton /> */}
 
           {/* <Property></Property> */}
         </div>
