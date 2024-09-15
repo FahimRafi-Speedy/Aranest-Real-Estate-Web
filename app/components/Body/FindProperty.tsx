@@ -184,7 +184,7 @@ const FindProperty: React.FC = () => {
               id="loc"
               value={searchText}
               onChange={handleChange}
-              placeholder="Enter a location"
+              placeholder="Enter a Location"
               className="outline-none w-full ml-4 focus:ring-0 focus:outline-none p-2 bg-transparent"
             />
           </Autocomplete>
