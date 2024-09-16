@@ -169,9 +169,9 @@ const FindProperty: React.FC = () => {
           <Image
             src="/search.png"
             alt="Search"
-            width={25}
-            height={25}
-            className="text-3xl"
+            width={22}
+            height={22}
+            className="opacity-30"
           />
 
           <Autocomplete
@@ -279,7 +279,7 @@ const FindProperty: React.FC = () => {
               }}
               className="ok-button"
             >
-              OK
+              Confirm
             </button>
             <button
               onClick={toggleMapModal}

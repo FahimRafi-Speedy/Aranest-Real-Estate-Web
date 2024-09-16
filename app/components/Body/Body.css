@@ -54,9 +54,10 @@
   overflow: hidden; /* Prevent overflow beyond rounded edges */
   height: 100%; /* Full height of the outer container */
   width: 100%; /* Full width of the outer container */
-  max-height: 500px; /* Maximum height in pixels */
+  max-height: 500px !important; /* Maximum height in pixels */
   border: none; /* Ensure no border */
   outline: none; /* Ensure no outline */
+  height: 100vh !important;
 }
 
 /* Apply styles to the map within the inner container */
