@@ -156,7 +156,7 @@ const FindProperty: React.FC = () => {
         console.error("Error:", error);
       });
   };
-
+  
   return (
     <>
       <form
