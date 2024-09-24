@@ -7,6 +7,7 @@ import Script from "next/script";
 import FindProperty from "./FindProperty";
 import { GoogleMap, Marker } from "@react-google-maps/api";
 import FilterButton from './FilterButton';
+import Card from "./Card";
 
 const PropertiesPage = () => {
   const [latitude, setLatitude] = useState<number | null>(null);
@@ -45,9 +46,10 @@ const PropertiesPage = () => {
             </div>
 
             {/* Right side */}
-            <div className="w-full md:w-1/2 p-4">
-              <h1>Our Properties</h1>
-              <p>This is the right section</p>
+            <div className="w-full md:w-1/2 p-6">
+              <p className="text-3xl font-bold">Our Properties</p>
+              <Card />
+              <Card />
             </div>
           </div>
         </div>

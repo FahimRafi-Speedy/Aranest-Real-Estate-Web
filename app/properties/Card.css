@@ -1,0 +1,28 @@
+.card:hover {
+  transform: scale(1.02);
+}
+
+.button {
+  background: linear-gradient(to right, #000000, #434343);
+  margin-top: 10px;
+  margin-left: -4px;
+  color: white;
+  width: 150px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  align-items: center;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+  background: linear-gradient(to right, #2BA5FF, #53E6F1);
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+  transform: scale(0.95);
+}
