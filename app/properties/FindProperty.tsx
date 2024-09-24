@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -6,20 +7,19 @@ import { PiLineVerticalBold } from "react-icons/pi";
 import CrossButton from "./CrossButton";
 import SearchButton from "./SearchButton";
 import Button from "./Button"; // Import Button component
-import { Autocomplete, GoogleMap, Marker } from "@react-google-maps/api";
+import { Autocomplete, GoogleMap, Marker, Circle } from "@react-google-maps/api"; // Import Circle
 import "./body.css"; // Assuming you have your own CSS file
+import RadiusSlider from "./RadiusSlider"; // Import RadiusSlider
 
 const FindProperty: React.FC = () => {
   const [searchText, setSearchText] = useState("");
-  const [autocomplete, setAutocomplete] =
-    useState<google.maps.places.Autocomplete | null>(null);
+  const [autocomplete, setAutocomplete] = useState<google.maps.places.Autocomplete | null>(null);
   const [latitude, setLatitude] = useState<number | null>(null);
   const [longitude, setLongitude] = useState<number | null>(null);
-  const [markerPosition, setMarkerPosition] =
-    useState<google.maps.LatLng | null>(null);
+  const [markerPosition, setMarkerPosition] = useState<google.maps.LatLng | null>(null);
+  const [radius, setRadius] = useState<number>(0); // Radius in meters
 
   useEffect(() => {
-    // Get user's current location on component mount
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
@@ -66,9 +66,7 @@ const FindProperty: React.FC = () => {
     }
   };
 
-  const onAutocompleteLoad = (
-    autocompleteInstance: google.maps.places.Autocomplete
-  ) => {
+  const onAutocompleteLoad = (autocompleteInstance: google.maps.places.Autocomplete) => {
     setAutocomplete(autocompleteInstance);
   };
 
@@ -84,11 +82,7 @@ const FindProperty: React.FC = () => {
           const geocoder = new google.maps.Geocoder();
           const latLng = new google.maps.LatLng(latitude, longitude);
           geocoder.geocode({ location: latLng }, (results, status) => {
-            if (
-              status === google.maps.GeocoderStatus.OK &&
-              results &&
-              results.length > 0
-            ) {
+            if (status === google.maps.GeocoderStatus.OK && results && results.length > 0) {
               setSearchText(results[0].formatted_address);
             }
           });
@@ -105,13 +99,7 @@ const FindProperty: React.FC = () => {
       <Image src="/aranest.png" alt="Aranest Logo" height={200} width={200} />
 
       <div className="flex border mt-7 px-5 py-1 border-gray-300 rounded-full items-center hover:shadow-md hover:scale-102 focus-within:shadow-lg focus-within:outline-none transition-transform duration-200 ease-in-out w-full max-w-md mx-auto">
-        <Image
-          src="/search.png"
-          alt="Search"
-          width={22}
-          height={22}
-          className="opacity-30"
-        />
+        <Image src="/search.png" alt="Search" width={22} height={22} className="opacity-30" />
 
         <Autocomplete className="w-full" onLoad={onAutocompleteLoad} onPlaceChanged={onPlaceChanged}>
           <input
@@ -142,6 +130,10 @@ const FindProperty: React.FC = () => {
       </div>
 
       <Button />
+      
+      {/* Radius Slider Component */}
+      <RadiusSlider radius={radius} setRadius={setRadius} />
+
       <SearchButton />
 
       {/* Google Map */}
@@ -163,11 +155,7 @@ const FindProperty: React.FC = () => {
 
               const geocoder = new google.maps.Geocoder();
               geocoder.geocode({ location: latLng }, (results, status) => {
-                if (
-                  status === google.maps.GeocoderStatus.OK &&
-                  results &&
-                  results.length > 0
-                ) {
+                if (status === google.maps.GeocoderStatus.OK && results && results.length > 0) {
                   setSearchText(results[0].formatted_address);
                 }
               });
@@ -176,6 +164,19 @@ const FindProperty: React.FC = () => {
           mapContainerClassName="h-full w-full border-none" // No border here
         >
           {markerPosition && <Marker position={markerPosition} />}
+          {markerPosition && (
+            <Circle
+              center={markerPosition}
+              radius={radius} // radius is already in meters
+              options={{
+                strokeColor: "#1E90FF", // Deeper blue color
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: "#ADD8E6", // Light blue for fill
+                fillOpacity: 0.35,
+              }}
+            />
+          )}
         </GoogleMap>
       </div>
     </div>

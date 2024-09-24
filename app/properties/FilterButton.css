@@ -1,0 +1,30 @@
+.fixed {
+  position: fixed;
+}
+
+.z-50 {
+  z-index: 50; /* Ensure the button is on top of other elements */
+}
+
+/* Additional styles for shadow effect */
+.bg-black {
+  background-color: rgba(0, 0, 0, 0.5); /* Shadow effect */
+}
+
+
+/* Ensure the shadow overlay and transitions are smooth */
+.modal-enter {
+  opacity: 0;
+}
+.modal-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in-out;
+}
+
+.modal-exit {
+  opacity: 1;
+}
+.modal-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}

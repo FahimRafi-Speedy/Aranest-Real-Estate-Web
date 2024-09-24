@@ -4,6 +4,8 @@
   background: linear-gradient(to right, #000000, #434343);
 }
 
+
+
 .searchButton:hover {
   background: linear-gradient(to right, #2BA5FF, #53E6F1);
   transition: ease-in-out 0.3s;

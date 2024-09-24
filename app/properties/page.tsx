@@ -3,10 +3,10 @@
 import { useState } from "react";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import AranestLogo from "./AranestLogo";
 import Script from "next/script";
 import FindProperty from "./FindProperty";
 import { GoogleMap, Marker } from "@react-google-maps/api";
+import FilterButton from './FilterButton';
 
 const PropertiesPage = () => {
   const [latitude, setLatitude] = useState<number | null>(null);
@@ -14,13 +14,17 @@ const PropertiesPage = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
+      {/* Google Maps script */}
       <Script
         src={`https://maps.googleapis.com/maps/api/js?key=AIzaSyDE1Y0JpqJE6v4vuRpsmpZCoL5ZmTfrHmI&libraries=places`}
         strategy="beforeInteractive"
       />
+      
+          <FilterButton /> {/* Place FilterButton below Header */}
       <main className="flex-grow">
         <div className="scale-wrapper">
           <Header />
+
           <div className="flex flex-wrap">
             {/* Left side */}
             <div className="w-full md:w-1/2 pr-0 p-4">
