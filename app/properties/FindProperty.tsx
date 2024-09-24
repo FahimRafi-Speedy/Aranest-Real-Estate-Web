@@ -9,11 +9,7 @@ import Button from "./Button"; // Import Button component
 import { Autocomplete, GoogleMap, Marker } from "@react-google-maps/api";
 import "./body.css"; // Assuming you have your own CSS file
 
-interface FindPropertyProps {
-  onLocationChange: (lat: number, lng: number) => void;
-}
-
-const FindProperty: React.FC<FindPropertyProps> = ({ onLocationChange }) => {
+const FindProperty: React.FC = () => {
   const [searchText, setSearchText] = useState("");
   const [autocomplete, setAutocomplete] =
     useState<google.maps.places.Autocomplete | null>(null);
@@ -31,14 +27,13 @@ const FindProperty: React.FC<FindPropertyProps> = ({ onLocationChange }) => {
           setLatitude(latitude);
           setLongitude(longitude);
           setMarkerPosition(new google.maps.LatLng(latitude, longitude));
-          onLocationChange(latitude, longitude);
         },
         (error) => {
           console.error("Error getting location", error);
         }
       );
     }
-  }, [onLocationChange]);
+  }, []);
 
   useEffect(() => {
     if (latitude !== null && longitude !== null) {
@@ -66,7 +61,6 @@ const FindProperty: React.FC<FindPropertyProps> = ({ onLocationChange }) => {
           setLatitude(lat);
           setLongitude(lng);
           setMarkerPosition(new google.maps.LatLng(lat, lng));
-          onLocationChange(lat, lng);
         }
       }
     }
@@ -86,7 +80,6 @@ const FindProperty: React.FC<FindPropertyProps> = ({ onLocationChange }) => {
           setLatitude(latitude);
           setLongitude(longitude);
           setMarkerPosition(new google.maps.LatLng(latitude, longitude));
-          onLocationChange(latitude, longitude);
 
           const geocoder = new google.maps.Geocoder();
           const latLng = new google.maps.LatLng(latitude, longitude);
@@ -108,7 +101,7 @@ const FindProperty: React.FC<FindPropertyProps> = ({ onLocationChange }) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center pt-8 pr-4 mt-2">
+    <div className="flex flex-col items-center justify-center pr-4">
       <Image src="/aranest.png" alt="Aranest Logo" height={200} width={200} />
 
       <div className="flex border mt-7 px-5 py-1 border-gray-300 rounded-full items-center hover:shadow-md hover:scale-102 focus-within:shadow-lg focus-within:outline-none transition-transform duration-200 ease-in-out w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto">
@@ -142,13 +135,14 @@ const FindProperty: React.FC<FindPropertyProps> = ({ onLocationChange }) => {
           alt="Target"
           width={25}
           height={25}
-          className="mr-4 text-xl cursor-pointer"
+          className="mr-0 text-xl cursor-pointer" // Set margin to 0
           title="Search in Your Area"
           onClick={handleLocationClick}
         />
       </div>
 
       <Button />
+        <SearchButton />
 
       {/* Google Map */}
       <div className="w-full mt-6 max-w-screen-lg mx-auto h-80">
@@ -185,7 +179,6 @@ const FindProperty: React.FC<FindPropertyProps> = ({ onLocationChange }) => {
         </GoogleMap>
       </div>
 
-      <SearchButton />
     </div>
   );
 };

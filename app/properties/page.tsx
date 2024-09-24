@@ -6,17 +6,11 @@ import Footer from "../components/Footer/Footer";
 import AranestLogo from "./AranestLogo";
 import Script from "next/script";
 import FindProperty from "./FindProperty";
-import Button from "../components/Body/Button"; // Import Button component
 import { GoogleMap, Marker } from "@react-google-maps/api";
 
 const PropertiesPage = () => {
   const [latitude, setLatitude] = useState<number | null>(null);
   const [longitude, setLongitude] = useState<number | null>(null);
-
-  const handleLocationChange = (lat: number, lng: number) => {
-    setLatitude(lat);
-    setLongitude(lng);
-  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -30,8 +24,7 @@ const PropertiesPage = () => {
           <div className="flex flex-wrap">
             {/* Left side */}
             <div className="w-full md:w-1/2 p-4">
-              
-              <FindProperty onLocationChange={handleLocationChange} />
+              <FindProperty />
 
               {/* Display Google Map below the FindProperty component */}
               <div className="mt-6">
