@@ -23,7 +23,7 @@ const PropertiesPage = () => {
           <Header />
           <div className="flex flex-wrap">
             {/* Left side */}
-            <div className="w-full md:w-1/2 p-4">
+            <div className="w-full md:w-1/2 pr-0 p-4">
               <FindProperty />
 
               {/* Display Google Map below the FindProperty component */}
@@ -32,8 +32,7 @@ const PropertiesPage = () => {
                   <GoogleMap
                     center={{ lat: latitude, lng: longitude }}
                     zoom={12}
-                    mapContainerClassName="google-map-container"
-                    className="h-80 w-full"
+                    mapContainerClassName="h-60 w-full border-none" // No border
                   >
                     <Marker position={{ lat: latitude, lng: longitude }} />
                   </GoogleMap>

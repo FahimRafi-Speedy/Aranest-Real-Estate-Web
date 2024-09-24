@@ -104,7 +104,7 @@ const FindProperty: React.FC = () => {
     <div className="flex flex-col items-center justify-center pr-4">
       <Image src="/aranest.png" alt="Aranest Logo" height={200} width={200} />
 
-      <div className="flex border mt-7 px-5 py-1 border-gray-300 rounded-full items-center hover:shadow-md hover:scale-102 focus-within:shadow-lg focus-within:outline-none transition-transform duration-200 ease-in-out w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto">
+      <div className="flex border mt-7 px-5 py-1 border-gray-300 rounded-full items-center hover:shadow-md hover:scale-102 focus-within:shadow-lg focus-within:outline-none transition-transform duration-200 ease-in-out w-full max-w-md mx-auto">
         <Image
           src="/search.png"
           alt="Search"
@@ -142,10 +142,10 @@ const FindProperty: React.FC = () => {
       </div>
 
       <Button />
-        <SearchButton />
+      <SearchButton />
 
       {/* Google Map */}
-      <div className="w-full mt-6 max-w-screen-lg mx-auto h-80">
+      <div className="w-full mt-6 max-w-screen-lg mx-auto h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px]">
         <GoogleMap
           center={
             markerPosition || {
@@ -173,12 +173,11 @@ const FindProperty: React.FC = () => {
               });
             }
           }}
-          mapContainerClassName="h-full w-full"
+          mapContainerClassName="h-full w-full border-none" // No border here
         >
           {markerPosition && <Marker position={markerPosition} />}
         </GoogleMap>
       </div>
-
     </div>
   );
 };
