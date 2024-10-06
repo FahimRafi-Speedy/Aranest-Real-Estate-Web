@@ -8,6 +8,7 @@ import FindProperty from "./FindProperty";
 import { GoogleMap, Marker } from "@react-google-maps/api";
 import FilterButton from "./FilterButton";
 import Card from "./Card";
+import "./body.css";
 
 const PropertiesPage = () => {
   const [latitude, setLatitude] = useState<number | null>(null);
@@ -45,11 +46,9 @@ const PropertiesPage = () => {
             </div>
 
             {/* Right side */}
-<div className="w-full md:w-1/2 p-6">
-  <p className="text-3xl font-bold mb-4">Our Properties</p>
-  
-  {/* Responsive grid for Card components */}
-  <div className="grid grid-cols-1 gap-4">
+<div className="w-full md:w-1/2 p-6 h-screen overflow-y-auto">
+  <p className="text-3xl font-bold">Our Properties</p>
+  <div className="grid custom-grid gap-6">
     <Card />
     <Card />
     <Card />
@@ -57,7 +56,6 @@ const PropertiesPage = () => {
     <Card />
   </div>
 </div>
-
 
             
           </div>

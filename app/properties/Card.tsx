@@ -37,7 +37,13 @@ const Card = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden my-6">
+    <div className="max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden my-6 relative">
+      
+      {/* Banner */}
+      <div className="absolute top-0 left-0 mt-2 pt-2 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded-tr-md rounded-br-md transform z-50">
+        MUST SEE - VERIFIED 
+      </div>
+
       <div className="relative p-4">
         {/* Slideshow */}
         <div className="relative w-full h-64 overflow-hidden rounded-lg">
@@ -51,7 +57,7 @@ const Card = () => {
                 src={src}
                 alt={`Property Image ${index + 1}`}
                 width={400}
-                height={250} // Adjust height for better fit
+                height={250}
                 className="object-cover w-full h-full rounded-lg inline-block"
               />
             ))}
@@ -121,7 +127,7 @@ const Card = () => {
         </div>
         <div className="mt-2">
           <span className="text-2xl font-bold text-gray-800">$1,200,000</span>
-          <span className="text-gray-600 text-sm"> $754 psf</span>
+          <span className="text-gray-600 text-sm pl-2"> $754 psf</span>
         </div>
         <div className="flex mt-4 space-x-2">
           <span className="bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-1 rounded">REMOTE VIEWING</span>
@@ -153,7 +159,7 @@ const Card = () => {
 
             {/* WhatsApp Button with Green Background and Rounded Edges */}
             <button className="flex items-center justify-center bg-green-500 text-white w-10 h-10 rounded-md">
-              <SiWhatsapp className="text-xl"/>
+              <SiWhatsapp className="text-xl" />
             </button>
           </div>
         </div>

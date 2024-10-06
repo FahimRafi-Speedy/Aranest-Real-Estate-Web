@@ -1,3 +1,26 @@
+@media (max-width: 1455px) {
+  .custom-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (min-width: 1456px) {
+  .custom-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Hide scrollbar for Webkit browsers */
+.right-side::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Hide scrollbar for Firefox */
+.right-side {
+  scrollbar-width: none; /* For Firefox */
+}
+
+
 /* Body Part CSS */
 
 .searchButton {
