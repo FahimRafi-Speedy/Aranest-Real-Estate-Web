@@ -6,7 +6,7 @@ import Footer from "../components/Footer/Footer";
 import Script from "next/script";
 import FindProperty from "./FindProperty";
 import { GoogleMap, Marker } from "@react-google-maps/api";
-import FilterButton from './FilterButton';
+import FilterButton from "./FilterButton";
 import Card from "./Card";
 
 const PropertiesPage = () => {
@@ -20,8 +20,7 @@ const PropertiesPage = () => {
         src={`https://maps.googleapis.com/maps/api/js?key=AIzaSyDE1Y0JpqJE6v4vuRpsmpZCoL5ZmTfrHmI&libraries=places`}
         strategy="beforeInteractive"
       />
-      
-          <FilterButton /> {/* Place FilterButton below Header */}
+      <FilterButton /> {/* Place FilterButton below Header */}
       <main className="flex-grow">
         <div className="scale-wrapper">
           <Header />
@@ -46,11 +45,21 @@ const PropertiesPage = () => {
             </div>
 
             {/* Right side */}
-            <div className="w-full md:w-1/2 p-6">
-              <p className="text-3xl font-bold">Our Properties</p>
-              <Card />
-              <Card />
-            </div>
+<div className="w-full md:w-1/2 p-6">
+  <p className="text-3xl font-bold mb-4">Our Properties</p>
+  
+  {/* Responsive grid for Card components */}
+  <div className="grid grid-cols-1 gap-4">
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+  </div>
+</div>
+
+
+            
           </div>
         </div>
       </main>
