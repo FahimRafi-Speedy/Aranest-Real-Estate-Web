@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import { FaHeart, FaRegHeart, FaPhoneAlt, FaComments } from 'react-icons/fa';
 import { SiWhatsapp } from 'react-icons/si';
+import "./body.css";
 
 const Card = () => {
   const images = [
@@ -41,7 +42,7 @@ const Card = () => {
       
       {/* Banner */}
       <div className="absolute top-0 left-0 mt-2 pt-2 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded-tr-md rounded-br-md transform z-50">
-        MUST SEE - VERIFIED 
+      <span className="text-m">★</span> MUST SEE - VERIFIED 
       </div>
 
       <div className="relative p-4">

@@ -1,3 +1,8 @@
+body {
+  background-color: #F3F4F6;
+  overflow-x: hidden;
+}
+
 @media (max-width: 1455px) {
   .custom-grid {
     grid-template-columns: 1fr !important;
@@ -10,33 +15,42 @@
   }
 }
 
-/* Hide scrollbar for Webkit browsers */
-.right-side::-webkit-scrollbar {
-  width: 0;
+/* Ensure both sections stack and take full height and width on small screens */
+@media (max-width: 800px) {
+  .flex-grow {
+    height: auto; /* Ensure it allows both sections to grow as needed */
+    flex-direction: column; /* Stack sections vertically */
+  }
+
+  .custom-left-side,
+  .custom-right-side {
+    width: 100%; /* Full width */
+    height: auto; /* Let the height adjust according to content */
+  }
 }
 
-/* Hide scrollbar for Firefox */
-.right-side {
-  scrollbar-width: none; /* For Firefox */
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
+/* Hide scrollbar for IE, Edge, and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 
-/* Body Part CSS */
-
+/* Additional styles for buttons and other elements */
 .searchButton {
   background: linear-gradient(to right, #000000, #434343);
 }
-
-
 
 .searchButton:hover {
   background: linear-gradient(to right, #2BA5FF, #53E6F1);
   transition: ease-in-out 0.3s;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
 }
 
-/* Gradient background for the OK button */
 .ok-button {
   background: linear-gradient(to right, #000000, #434343);
   color: white;
@@ -47,96 +61,41 @@
 
 .ok-button:hover {
   background: linear-gradient(to right, #2BA5FF, #53E6F1);
-  /* transition: ease-in-out 0.3s; */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 
-
-
-
-/* Outer Container */
+/* Modal styles */
 .map-modal-outer {
   background-color: #f8f8f8;
-  border-radius: 10px; /* Rounded edges */
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow effect */
-  margin: 20px auto; /* Center horizontally and add margin */
-  padding: 20px; /* Padding inside the outer container */
-  max-width: 700px; /* Set a maximum width */
-  width: 90%; /* Make it responsive to different widths */
-  height: auto; /* Allow the height to adjust automatically */
-  max-height: 80vh; /* Maximum height relative to the viewport */
-  overflow: auto; /* Enable scrolling if content exceeds available space */
-  position: relative; /* Ensure proper positioning */
-  top: 20px; /* Position from the top */
-  border: none; /* Ensure no border */
-  outline: none; /* Ensure no outline */
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 700px;
+  width: 90%;
+  height: auto;
+  max-height: 80vh;
+  overflow: auto;
+  position: relative;
+  top: 20px;
+  border: none;
+  outline: none;
 }
 
-/* Inner Map Container */
 .map-modal-inner {
-  border-radius: 10px; /* Rounded edges for the inner map container */
-  overflow: hidden; /* Prevent overflow beyond rounded edges */
-  height: 100%; /* Full height of the outer container */
-  width: 100%; /* Full width of the outer container */
-  max-height: 500px !important; /* Maximum height in pixels */
-  border: none; /* Ensure no border */
-  outline: none; /* Ensure no outline */
-  height: 100vh !important;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  max-height: 500px !important;
+  border: none;
+  outline: none;
 }
 
-/* Apply styles to the map within the inner container */
 .google-map-container {
-  height: 100%; /* Full height of the inner container */
-  width: 100%; /* Full width of the inner container */
-  border: none; /* Ensure no border */
-  outline: none; /* Ensure no outline */
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* @media (max-height: 900px) {
-  .mt-variable {
-    margin-top: 6rem;
-  }
-}
-
-@media (max-height: 800px) {
-  .mt-variable {
-    margin-top: 5rem;
-  }
-}
-
-@media (max-height: 700px) {
-  .mt-variable {
-    margin-top: 4rem;
-  }
-}
-
-@media (max-height: 600px) {
-  .mt-variable {
-    margin-top: 3rem;
-  }
-}
-
-@media (max-height: 500px) {
-  .mt-variable {
-    margin-top: 2rem;
-  }
-} */
