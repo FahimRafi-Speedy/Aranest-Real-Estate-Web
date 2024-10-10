@@ -1,11 +1,29 @@
+"use client"; // Ensure client-side rendering
+
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import { FaHeart, FaRegHeart, FaPhoneAlt, FaComments } from 'react-icons/fa';
 import { SiWhatsapp } from 'react-icons/si';
+import { useRouter } from 'next/navigation';  // Import useRouter from next/navigation for the app directory
 import "./body.css";
 
 const Card = () => {
+  // Property details stored in variables (hardcoded for now)
+  const property = {
+    title: "Riverside Residences",
+    location: "99 Pasir Ris Grove · D18",
+    type: "Condo · 2000 · 99 yrs",
+    beds: 3,
+    baths: 2,
+    sqft: 2561,
+    price: 1200000,
+    pricePerSqft: 754,
+    updated: "Updated 4 hrs ago",
+  };
+
+  const tags = ["REMOTE VIEWING", "NEGOTIABLE", "EXCLUSIVE"];
+
   const images = [
     '/property/house1.jpg',
     '/property/house2.jpg',
@@ -15,6 +33,8 @@ const Card = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
+
+  const router = useRouter();  // Initialize useRouter
 
   const nextImage = () => {
     setCurrentImage((prevIndex) => (prevIndex + 1) % images.length);
@@ -36,6 +56,19 @@ const Card = () => {
   const toggleCheckbox = () => {
     setIsChecked(!isChecked);
   };
+
+  // Fetch data from backend (when implemented)
+  const fetchDataFromBackend = async () => {
+    // Placeholder for future fetch request
+    // Example: const response = await fetch('/api/property');
+    // const data = await response.json();
+    // For now, using hardcoded data
+    console.log("Fetching data from backend...");
+  };
+
+  useEffect(() => {
+    fetchDataFromBackend(); // Fetch data on component mount
+  }, []);
 
   return (
     <div className="max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden my-6 relative">
@@ -116,24 +149,29 @@ const Card = () => {
         </div>
 
         {/* Property Details */}
-        <h2 className="text-xl font-bold">Riverside Residences</h2>
-        <p className="text-gray-600">99 Pasir Ris Grove · D18</p>
-        <p className="text-gray-600">Condo · 2000 · 99 yrs</p>
+        <h2
+          className="text-xl font-bold cursor-pointer"
+          onClick={() => router.push('/PropertyDetails')}  // Add onClick to redirect
+        >
+          {property.title}
+        </h2>
+        <p className="text-gray-600">{property.location}</p>
+        <p className="text-gray-600">{property.type}</p>
         <div className="flex items-center mt-2">
-          <span className="text-gray-600">3 Beds</span>
+          <span className="text-gray-600">{property.beds} Beds</span>
           <span className="mx-2">·</span>
-          <span className="text-gray-600">2 Baths</span>
+          <span className="text-gray-600">{property.baths} Baths</span>
           <span className="mx-2">·</span>
-          <span className="text-gray-600">2,561 sqft</span>
+          <span className="text-gray-600">{property.sqft} sqft</span>
         </div>
         <div className="mt-2">
-          <span className="text-2xl font-bold text-gray-800">$1,200,000</span>
-          <span className="text-gray-600 text-sm pl-2"> $754 psf</span>
+          <span className="text-2xl font-bold text-gray-800">${property.price.toLocaleString()}</span>
+          <span className="text-gray-600 text-sm pl-2"> ${property.pricePerSqft} psf</span>
         </div>
         <div className="flex mt-4 space-x-2">
-          <span className="bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-1 rounded">REMOTE VIEWING</span>
-          <span className="bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-1 rounded">NEGOTIABLE</span>
-          <span className="bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-1 rounded">EXCLUSIVE</span>
+          {tags.map((tag, index) => (
+            <span key={index} className="bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-1 rounded">{tag}</span>
+          ))}
         </div>
 
         {/* Contact Buttons and Agent Info */}
@@ -142,7 +180,7 @@ const Card = () => {
           <div className="flex items-center">
             <img src="https://placehold.co/32x32" alt="Agent profile" className="w-8 h-8 rounded-full" />
             <div className="ml-2">
-              <p className="text-gray-600 text-sm">Updated 4 hrs ago</p>
+              <p className="text-gray-600 text-sm">{property.updated}</p>
             </div>
           </div>
 

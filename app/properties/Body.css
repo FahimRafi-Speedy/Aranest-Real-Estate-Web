@@ -40,6 +40,20 @@ body {
   scrollbar-width: none;  /* Firefox */
 }
 
+
+/* Aranest Logo */
+.logo {
+  width: 200px; /* Default size for larger screens */
+  height: auto; /* Maintain aspect ratio */
+}
+
+@media (max-width: 640px) { /* For small screens */
+  .logo {
+    width: 150px; /* Smaller size for mobile devices */
+  }
+}
+
+
 /* Additional styles for buttons and other elements */
 .searchButton {
   background: linear-gradient(to right, #000000, #434343);

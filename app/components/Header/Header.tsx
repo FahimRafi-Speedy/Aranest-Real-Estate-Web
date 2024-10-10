@@ -7,7 +7,7 @@ import { TbGridDots } from "react-icons/tb";
 const Header = () => {
   return (
     <div className="w-full">
-      <ul className="flex items-center justify-end space-x-4 p-3 sm:p-4 text-sm mr-2"> {/* Set fixed margin-right */}
+      <ul className="flex items-center justify-end space-x-4 p-3 sm:p-4 text-sm mr-2">
         {/* Gmail link */}
         <li className="hover:underline">
           <Link href="https://mail.google.com/mail/">Home</Link>
@@ -36,9 +36,9 @@ const Header = () => {
             src="/user.png"
             alt="Profile Photo"
             width={30}
-            height={100}
+            height={30} // Set height to 30 for a square aspect ratio
             className="rounded-full object-cover"
-            style={{ height: 30 }}
+            style={{ minWidth: 30, minHeight: 30 }} // Ensure it doesn't shrink below 30px
           />
         </li>
       </ul>
