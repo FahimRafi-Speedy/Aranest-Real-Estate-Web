@@ -1,34 +1,17 @@
-"use client"; // Ensure client-side rendering
+"use client";
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
 import { FaBed, FaBath, FaExpandArrowsAlt, FaPhoneAlt } from "react-icons/fa";
 import { SiWhatsapp } from "react-icons/si";
-import { MdChevronLeft, MdChevronRight } from "react-icons/md"; // Ensure to import the icons
+import PropertyPhoto from "./PropertyPhoto"; // Import the PropertyPhoto component
 
 const Details = () => {
   const images = [
     "/property/house1.jpg",
     "/property/house2.jpg",
     "/property/house3.jpg",
+    "/property/house4.jpg",
+    "/property/house5.jpg",
   ];
-
-  const [currentImage, setCurrentImage] = useState(0);
-
-  const nextImage = () => {
-    setCurrentImage((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImage(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length
-    );
-  };
-
-  useEffect(() => {
-    const interval = setInterval(nextImage, 3000);
-    return () => clearInterval(interval);
-  }, []);
 
   // Define variables for property details
   const propertyDetails = {
@@ -42,8 +25,8 @@ const Details = () => {
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     address: {
       area: "Dhaka",
-      houseNo: "Dhaka",
-      street: "Dhaka",
+      houseNo: "123",
+      street: "Main St.",
       city: "Dhaka",
       state: "Dhaka",
       country: "Bangladesh",
@@ -52,15 +35,14 @@ const Details = () => {
     details: {
       propertyId: 1,
       propertySize: "58 m²",
-      bedrooms: 4, // Moved here
-      bathrooms: 3, // Moved here
+      bedrooms: 4,
+      bathrooms: 3,
       floorsNo: 3,
       builtYear: 2002,
       garages: 1,
       garageSize: "500 m²",
       customId: "Dggb",
     },
-    videoContent: "Video content goes here.",
     agent: {
       name: "Maria Barlow",
       email: "agent@info.com",
@@ -70,59 +52,13 @@ const Details = () => {
 
   return (
     <div className="flex flex-col p-4 max-w-7xl mx-auto md:px-2 lg:px-0 space-y-8">
-      {/* Image Slideshow at the Top */}
-      <div className="relative p-4">
-        {/* Slideshow */}
-        <div className="relative overflow-hidden rounded-lg center">
-          {/* Set a fixed height */}
-          <div
-            className="whitespace-nowrap transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${currentImage * 100}%)` }}
-          >
-            {images.map((src, index) => (
-              <Image
-                key={index}
-                src={src}
-                alt={`Property Image ${index + 1}`}
-                width={1000} // Adjust width for aspect ratio
-                height={1000} // Adjust height for aspect ratio
-                className="object-cover w-full h-full rounded-lg inline-block" // Ensure image covers the div
-              />
-            ))}
-          </div>
-          {/* Left and Right Buttons */}
-          <button
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 backdrop-blur-md rounded-full w-8 h-8 flex items-center justify-center"
-            onClick={prevImage}
-          >
-            <MdChevronLeft className="text-black" />
-          </button>
-          <button
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 backdrop-blur-md rounded-full w-8 h-8 flex items-center justify-center"
-            onClick={nextImage}
-          >
-            <MdChevronRight className="text-black" />
-          </button>
-        </div>
-
-        {/* Dots Positioned Outside of Slideshow */}
-        <div className="flex justify-center mt-2">
-          {images.map((_, index) => (
-            <div
-              key={index}
-              className={`w-2 h-2 rounded-full ${
-                index === currentImage ? "bg-black" : "bg-gray-400"
-              } mx-1`}
-            ></div>
-          ))}
-        </div>
-      </div>
+      {/* Property Image Section */}
+      <PropertyPhoto images={images} /> {/* Render PropertyPhoto with the image list */}
 
       {/* Flex Container for Details and Agent Cards */}
-      <div className="flex flex-col sm:flex-row justify-between mb-4 space-y-8 sm:space-y-0">
+      <div className="container flex flex-col sm:flex-row justify-between mb-4 space-y-8 sm:space-y-0">
         {/* Left Side Card (Details) */}
         <div className="flex-1 bg-white shadow-md rounded-lg p-6 space-y-6">
-          {/* Property Heading */}
           <div className="mb-4">
             <h2 className="text-2xl font-bold">{propertyDetails.heading}</h2>
             <p className="text-xl text-gray-700">{propertyDetails.price}</p>
@@ -152,21 +88,18 @@ const Details = () => {
             </div>
 
             <div className="flex space-x-8 mt-4">
-              {/* Bedrooms */}
               <div className="flex flex-col items-center">
                 <FaBed className="text-black size-6 mb-1" />
                 <p className="font-bold">{propertyDetails.details.bedrooms}</p>
                 <p>Bedrooms</p>
               </div>
 
-              {/* Bathrooms */}
               <div className="flex flex-col items-center">
                 <FaBath className="text-black size-6 mb-1" />
                 <p className="font-bold">{propertyDetails.details.bathrooms}</p>
                 <p>Bathrooms</p>
               </div>
 
-              {/* Area */}
               <div className="flex flex-col items-center">
                 <FaExpandArrowsAlt className="text-black size-6 mb-1" />
                 <p className="font-bold">{propertyDetails.area}</p>

@@ -1,142 +1,27 @@
-Now in my PropertyDetails Folder in page.tsx file I want to use the information like-
+Now similar pattern make a form page it will be in a different folder named Add-Listing (/AddListing routing). here will be page.tsx where all the components will be called including my Header and Footer.
+There will be Form.tsx file where all the form related code will be.
 
-First here will be photos slideshow like this code
-<div className="relative w-full h-64 overflow-hidden rounded-lg">
-          <div
-            className="whitespace-nowrap transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${currentImage * 100}%)` }}
-          >
-            {images.map((src, index) => (
-              <Image
-                key={index}
-                src={src}
-                alt={`Property Image ${index + 1}`}
-                width={400}
-                height={250}
-                className="object-cover w-full h-full rounded-lg inline-block"
-              />
-            ))}
-          </div>
-It will be in center of the screen after the margin will occupy full width according to ratio and responsive in smaller screen.
+Now in Form there will be,
 
-Left side occupy 60% of the screen after margin-
+Heading named Add Your Property Details.
+Title 
+Description [Text Box Area]
 
-There will be gaps between Cards and make the All cards and all of this components in a Details.tsx file which I will call to page.tsx file.
+(Now Below this every row will have 3 input fields and others are like down down, But when in smaller screen all the inputs will be down down like responsive.)
 
-Property Heading Card-
-Riverside Residences 
-$ 2000/month
+Small Heading- Property Price for the 3 fields- Price, Currency (Ex: "$"), Price For Duration [Drop down button for choosing /Month, /Year, /Day, /Week].
 
-OverView Card-
+Small Heading- Select Categories for the 3 fields- Category [Select Category as default option drop down button for selecting from- Home, Office, Appartment], Post Type [Select Type as default option drop down button for selecting from- Rent, Sale], Post Status [Select Status as default option drop down button for selecting- (Here give sample options for the Post Status of a Property Post)].
 
+Small Heading- Thumbnail - which where will be choose file option for selecting  file and when no file choose besides there will be saying No file Chosen and when choosed show the photo as smaller view [here only one photo will be chooses]
+no other filed in this row.
 
-Overview
-Post Type: Sales
+Small Heading- Add Property Images - for choosing multiple images here and rest of the properties as up Description.
+no other filed in this row and show all the photos will be shown as Small in a row.
 
-Property Category: Office
+Small Heading- Listing Location for - Find Location (labeled Search Your Location) all in the row. Then below there will be 9 fields each row having 3 fields for bigger screen and for smaller screen all fields will be down down. The fields are:
+  row-1. Latitude, Longitude, House
+  row-2. Street Address, Address, City
+  row-3. State, Country, ZIP Code 
 
-Property Status: Available 
-
-
-
-Available Date and Room Information Card- 
-
-Available From:
-2024-06-29
-
-(This part will be in felx, add react icons accordingly)
-
-
-04 
-
-Bedrooms
-
-03 
-
-Bathrooms
-
-2000 sqft
-(Flex ends here)
-
-Description Card-
-
-
-Description
-Lorem
-
-Address Card- 
-
-Address
-Area: Dhaka, Bangladesh
-
-House No: Dhaka
-
-Street: Dhaka
-
-City: Dhaka
-
-State: Dhaka
-
-Country: Bangladesh
-
-ZIP: 1236
-
-Details Card-
-
-
-Details
-Property Id: 1
-
-Property Size: 58 m2
-
-Bedrooms: 58
-
-Bathrooms: 58
-
-Floors No: 3
-
-Built Year: 2002
-
-Garages: 1
-
-Garage Size: 500 m2
-
-Floors No: 3
-
-Custom ID: Dggb
-
-Video Card-
-
-
-Video
-
-There will be left and right side margin for bigger screen and in smaller screen the margin will be keep lessen like responsive.
-After the margin occupying space the top images will be occupy full width according to ratio.
-
-now right side make a separate file Agent.tsx-
-
-Agent information
-Name: Maria Barlow
-Email: agent@info.com
-Phone: 0282882828
-then use the three buttons-
- {/* Contact Buttons */}
-          <div className="flex space-x-2">
-            {/* Phone Button with Blue Icon */}
-            <button className="flex items-center justify-center w-10 h-10 bg-blue-500 text-white rounded-full">
-              <FaPhoneAlt />
-            </button>
-
-            {/* Chat Button with Blue Background and Text */}
-            <button className="flex items-center justify-center bg-blue-500 text-white text-sm font-semibold px-4 py-2 rounded-md">
-              Chat
-            </button>
-
-            {/* WhatsApp Button with Green Background and Rounded Edges */}
-            <button className="flex items-center justify-center bg-green-500 text-white w-10 h-10 rounded-md">
-              <SiWhatsapp className="text-xl" />
-            </button>
-
-
-The all cards color will be white and font color will be black.
-
+small heading- Listing Details for- 

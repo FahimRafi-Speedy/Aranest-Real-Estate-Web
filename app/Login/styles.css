@@ -1,0 +1,26 @@
+.button {
+  background: linear-gradient(to right, #000000, #434343);
+  color: white;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 12px;
+  width: 120px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+  background: linear-gradient(to right, #2BA5FF, #53E6F1);
+  transform: translateX(-50%) scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+  transform: translateX(-50%) scale(0.95);
+}
