@@ -1,0 +1,81 @@
+/* /app/chat/styles.css */
+
+/* Chat container */
+.chat-container {
+  background: linear-gradient(to right, #000000, #434343);
+  color: white;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 500px;
+}
+
+/* Message window */
+.chat-window {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  padding-right: 0.5rem;
+}
+
+/* General message style */
+.chat-message {
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin: 0.5rem 0;
+  max-width: 80%;
+  color: white;
+}
+
+/* User message style */
+.user-message {
+  background: linear-gradient(to right, #2BA5FF, #53E6F1);
+  align-self: flex-end;
+}
+
+/* Authority message style */
+.authority-message {
+  background: linear-gradient(to right, #434343, #cecece);
+  align-self: flex-start;
+}
+
+/* Chat input and button container */
+.chat-input-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Input field styling */
+.chat-input {
+  flex-grow: 1;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  color: black;
+}
+
+/* Send button styling */
+.send-button {
+  background: linear-gradient(to right, #2BA5FF, #53E6F1);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.send-button:hover {
+  transform: scale(1.05);
+}
+
+.send-button:active {
+  transform: scale(0.95);
+}

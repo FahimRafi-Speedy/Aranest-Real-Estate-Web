@@ -1,0 +1,68 @@
+/* Custom CSS */
+
+/* Form container styles */
+.formContainer {
+  background-color: white;
+  max-width: 1200px; /* Maximum width for larger screens */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto; /* Horizontally centers the container and gives top/bottom margin */
+  padding: 20px; /* Add padding inside for content spacing */
+}
+
+/* Heading styles */
+.formHeading {
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Form input styles */
+.formInput {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  width: 100%;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: #4e4e4e; /* Change the border color on focus */
+}
+
+/* Grid layout for form inputs */
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column for mobile screens */
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .formGrid {
+    grid-template-columns: 1fr 1fr; /* 2 columns for medium screens (MD) */
+  }
+  /* Additional styling to match your design */
+}
+
+/* Submit button styling */
+.submitButton {
+  background: linear-gradient(to right, #000000, #434343);
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 170px;
+}
+
+.submitButton:hover {
+  background: linear-gradient(to right, #2ba5ff, #53e6f1);
+  transform: scale(1.05);
+}
+
+.submitButton:active {
+  transform: scale(0.95); /* Button shrinking effect */
+}

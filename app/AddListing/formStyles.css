@@ -1,0 +1,164 @@
+.formContainer {
+  max-width: 1000px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.formHeading {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .formGrid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.formInput {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px;
+  width: 100%;
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: #272828;
+}
+
+/* Container for the thumbnail section */
+.thumbnailContainer {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Custom Button Styling */
+.customButton {
+  width: 180px;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(to right, #1b1b1b, #434343);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.customButton:hover {
+  transform: scale(1.05);
+}
+
+.customButton:active {
+  transform: scale(0.95);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Card-style layout for images */
+.thumbnailCard,
+.imageCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.thumbnailPreview,
+.imagePreview {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Grid layout for multiple images */
+.imageGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Typography */
+.formHeading {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Smaller button with transitions */
+button {
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  background: linear-gradient(to right, #000000, #434343);
+  color: white;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(to right, #2ba5ff, #53e6f1);
+  transform: translateY(-2px);
+}
+
+
+.formCheckbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #151616;
+}
+
+.submitButton {
+  background: linear-gradient(to right, #000000, #434343);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background: linear-gradient(to right, #2BA5FF, #53E6F1);
+  transform: scale(1.05); /* Keep translateX to center */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.submitButton:active {
+  transform: scale(0.95); /* Ensure the centering is retained */
+}
+
+
+/*LocationInput*/
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  font-size: 16px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+li:last-child {
+  border-bottom: none;
+}

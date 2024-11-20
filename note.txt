@@ -1,4 +1,6 @@
 Now similar pattern make a form page it will be in a different folder named Add-Listing (/AddListing routing). here will be page.tsx where all the components will be called including my Header and Footer.
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 There will be Form.tsx file where all the form related code will be.
 
 Now in Form there will be,
@@ -25,3 +27,22 @@ Small Heading- Listing Location for - Find Location (labeled Search Your Locatio
   row-3. State, Country, ZIP Code 
 
 small heading- Listing Details for- 
+[Full Screen 4 items in a row and then for smaller screen it keeps 3, 2, 1 etc]
+Size Unit Drop down box for 2 option- m^2 and ft^2.
+Property Size (Also up down arrow for inc, dec positive numbers)
+Bathrooms (Also up down arrow for inc, dec positive numbers)
+Bedrooms (Also up down arrow for inc, dec positive numbers)
+
+Customer ID (Number Field)
+Year Built (Number Field)
+Garages (Also up down arrow for inc, dec positive numbers)
+Garage Size (Number Field)
+
+Available Form (Date Selection Field)
+Floor No. (Also up down arrow for inc, dec positive numbers)
+
+And A checkbox black fill and white tick sign and side writing- Hide Contact
+
+And a Submit button (Normal- linear-gradient(to right, #000000, #434343); On Hover- linear-gradient(to right, #2BA5FF, #53E6F1);)
+
+Make responsive for every screen Size
