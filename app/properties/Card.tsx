@@ -6,7 +6,7 @@ import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import { FaHeart, FaRegHeart, FaPhoneAlt, FaComments } from 'react-icons/fa';
 import { SiWhatsapp } from 'react-icons/si';
 import { useRouter } from 'next/navigation';  // Import useRouter from next/navigation for the app directory
-import "./body.css";
+import "./Body.css";
 
 const Card = () => {
   // Property details stored in variables (hardcoded for now)

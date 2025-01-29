@@ -8,7 +8,7 @@ import SearchButton from "./SearchButton";
 import Button from "./Button";
 import { Autocomplete, GoogleMap, Marker } from "@react-google-maps/api";
 import Modal from "react-modal";
-import "./body.css"; // Assuming you have your own CSS file
+import "./Body.css"; // Assuming you have your own CSS file
 
 const FindProperty: React.FC = () => {
   const [searchText, setSearchText] = useState("");

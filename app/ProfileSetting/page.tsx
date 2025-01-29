@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "../components/Header/Header";  // Import the Header component
-import Footer from "../components/Footer/Footer";  // Import the Footer component
+import Header from "../../components/Header/Header";  // Import the Header component
+import Footer from "../../components/Footer/Footer";  // Import the Footer component
 import ProfileSetting from "./ProfileSetting";
 
 const ProfilePage = () => {

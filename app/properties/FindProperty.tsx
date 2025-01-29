@@ -12,7 +12,7 @@ import {
   Marker,
   Circle,
 } from "@react-google-maps/api"; // Import Circle
-import "./body.css"; // Assuming you have your own CSS file
+import "./Body.css"; // Assuming you have your own CSS file
 import RadiusSlider from "./RadiusSlider"; // Import RadiusSlider
 
 const FindProperty: React.FC = () => {

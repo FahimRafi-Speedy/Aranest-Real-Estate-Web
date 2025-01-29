@@ -6,7 +6,7 @@ import Image from "next/image";
 import { PiLineVerticalBold } from "react-icons/pi";
 import CrossButton from "./CrossButton";
 import { Autocomplete, LoadScript } from '@react-google-maps/api';
-import "./body.css";
+import "./Body.css";
 
 const FindProperty: React.FC = () => {
   const [searchText, setSearchText] = useState("");

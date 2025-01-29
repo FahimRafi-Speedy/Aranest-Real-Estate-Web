@@ -1,6 +1,6 @@
 import SearchAgent from "./SearchAgents";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
 const SearchAgentPage = () => {
     return (

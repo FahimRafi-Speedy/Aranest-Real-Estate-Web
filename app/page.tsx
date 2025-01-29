@@ -1,15 +1,15 @@
 import Image from "next/image";
 import Homepage from "./routes/Homepage";
-import Header from "./components/Header/Header";
-import FindProperty from "./components/Body/FindProperty";
-import Button from "./components/Body/Button";
-import BottomText from "./components/Body/BottomText";
-import Footer from "./components/Footer/Footer";
-import SearchButton from "./components/Body/SearchButton";
-import Card from "./components/Cards/Card";
+import Header from "../components/Header/Header";
+import FindProperty from "../components/Body/FindProperty";
+import Button from "../components/Body/Button";
+import BottomText from "../components/Body/BottomText";
+import Footer from "../components/Footer/Footer";
+import SearchButton from "../components/Body/SearchButton";
+import Card from "../components/Cards/Card";
 import "./globals.css";
-import CardContainer from "./components/Cards/CardContainer";
-import Property from "./components/Body/Property";
+import CardContainer from "../components/Cards/CardContainer";
+import Property from "../components/Body/Property";
 import Script from "next/script";
 
 export default function Home() {

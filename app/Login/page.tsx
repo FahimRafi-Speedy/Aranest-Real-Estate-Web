@@ -1,7 +1,7 @@
 "use client";
 
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 import Login from "./Login";
 import Register from "./Register";
 import ForgetPassword from "./ForgetPassword";

@@ -1,6 +1,6 @@
 // RadiusSlider.tsx
 import React from 'react';
-import "./body.css";
+import "./Body.css";
 
 interface RadiusSliderProps {
   radius: number;

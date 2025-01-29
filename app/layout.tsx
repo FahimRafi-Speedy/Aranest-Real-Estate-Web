@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Header from "./components/Header/Header";
-import FindProperty from "./components/Body/FindProperty";
-import Button from "./components/Body/Button";
+import Header from "../components/Header/Header";
+import FindProperty from "../components/Body/FindProperty";
+import Button from "../components/Body/Button";
 import { Roboto } from 'next/font/google';
 import Head from "next/head";
 

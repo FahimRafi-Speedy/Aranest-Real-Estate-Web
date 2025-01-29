@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 import Script from "next/script";
 import FindProperty from "./FindProperty";
 import { GoogleMap, Marker } from "@react-google-maps/api";
 import FilterButton from "./FilterButton";
 import Card from "./Card";
-import "./body.css";  // Ensure this path is correct
+import "./Body.css";  // Ensure this path is correct
 
 const PropertiesPage = () => {
   const [latitude, setLatitude] = useState<number | null>(null);

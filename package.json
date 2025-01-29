@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "^14.2.11",
     "@react-google-maps/api": "^2.20.3",
     "@talkjs/react": "^0.1.9",
     "next": "^14.2.17",

@@ -1,8 +1,8 @@
 // /app/contact/page.tsx
 "use client";
 
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 import ContactForm from "./ContactForm";
 import Map from "./Map";
 

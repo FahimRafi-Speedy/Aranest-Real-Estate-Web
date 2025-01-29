@@ -1,7 +1,7 @@
 "use client";
 
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 import Form from "./Form";
 
 export default function AddListingPage() {
