@@ -37,7 +37,9 @@ const PropertyPhoto: React.FC<PropertyPhotoProps> = ({ images }) => {
   };
 
   const prevImage = () => {
-    setCurrentImage((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    setCurrentImage(
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+    );
   };
 
   const openAllImagesModal = () => {
@@ -128,16 +130,16 @@ const PropertyPhoto: React.FC<PropertyPhotoProps> = ({ images }) => {
           {images.map((_, index) => (
             <div
               key={index}
-              className={`w-2 h-2 rounded-full ${index === currentImage ? "bg-black" : "bg-gray-400"} mx-1`}
+              className={`w-2 h-2 rounded-full ${
+                index === currentImage ? "bg-black" : "bg-gray-400"
+              } mx-1`}
             ></div>
           ))}
         </div>
       </div>
 
       {/* Medium/Large Screen Layout */}
-      <div className="hidden md:block">
-        {renderImageGallery()}
-      </div>
+      <div className="hidden md:block">{renderImageGallery()}</div>
 
       {/* Modal for Single Image */}
       <Modal
@@ -146,15 +148,15 @@ const PropertyPhoto: React.FC<PropertyPhotoProps> = ({ images }) => {
         contentLabel="Image Modal"
         style={{
           overlay: {
-            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
             zIndex: 1000,
           },
           content: {
-            width: '80%',
-            height: '90%',
-            margin: 'auto',
-            top: '50px',
-            border: 'none',
+            width: "80%",
+            height: "90%",
+            margin: "auto",
+            top: "50px",
+            border: "none",
             zIndex: 1001,
           },
         }}

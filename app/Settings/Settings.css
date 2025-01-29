@@ -1,0 +1,147 @@
+/* General container styles for the page */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9; /* Light background for better contrast */
+}
+
+/* General button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease, color 0.3s ease;
+}
+
+/* Gradient button styles for all primary actions */
+.btn-gradient {
+  background: linear-gradient(to right, #1b1b1b, #434343);
+  color: white;
+}
+
+.btn-gradient:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #2BA5FF, #53E6F1);
+}
+
+.btn-gradient:active {
+  transform: scale(0.95);
+}
+
+/* Outlined button styles for secondary actions */
+.btn-outline {
+  background: transparent;
+  border: 2px solid #434343;
+  color: #434343;
+}
+
+.btn-outline:hover {
+  background: #434343;
+  color: white;
+  transform: scale(1.05);
+}
+
+.btn-outline:active {
+  transform: scale(0.95);
+}
+
+/* Circular close button styles */
+.btn-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: #f01008;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.btn-circle:hover {
+  transform: scale(1.1);
+  background: #e1221c;
+}
+
+.btn-circle:active {
+  transform: scale(0.9);
+}
+
+/* Input styles */
+input.form-input {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+  margin: 8px 0;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+input.form-input:focus {
+  border-color: #434343;
+  outline: none;
+}
+
+/* Modal styles */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.6); /* Dim background */
+  z-index: 50;
+}
+
+/* Modal box */
+.modal-box {
+  background: white;
+  width: 90%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Open modal animation */
+.modal[open] .modal-box {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Modal title */
+.modal-box h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #1b1b1b;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .modal-box {
+    width: 95%;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}

@@ -102,22 +102,6 @@
   margin-bottom: 0.5rem;
 }
 
-/* Smaller button with transitions */
-button {
-  padding: 0.4rem 1rem;
-  font-size: 0.85rem;
-  border-radius: 6px;
-  background: linear-gradient(to right, #000000, #434343);
-  color: white;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-button:hover {
-  background: linear-gradient(to right, #2ba5ff, #53e6f1);
-  transform: translateY(-2px);
-}
-
-
 .formCheckbox {
   width: 18px;
   height: 18px;
