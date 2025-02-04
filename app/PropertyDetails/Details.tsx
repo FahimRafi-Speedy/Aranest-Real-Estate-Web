@@ -2,7 +2,8 @@
 
 import { FaBed, FaBath, FaExpandArrowsAlt, FaPhoneAlt } from "react-icons/fa";
 import { SiWhatsapp } from "react-icons/si";
-import PropertyPhoto from "./PropertyPhoto"; // Import the PropertyPhoto component
+import PhotoLayout from "./PhotoLayout";
+
 
 const Details = () => {
   const images = [
@@ -53,7 +54,7 @@ const Details = () => {
   return (
     <div className="flex flex-col p-4 max-w-7xl mx-auto md:px-2 lg:px-0 space-y-8">
       {/* Property Image Section */}
-      <PropertyPhoto images={images} /> {/* Render PropertyPhoto with the image list */}
+      <PhotoLayout images={images} /> {/* Render PropertyPhoto with the image list */}
 
       {/* Flex Container for Details and Agent Cards */}
       <div className="container flex flex-col sm:flex-row justify-between mb-4 space-y-8 sm:space-y-0">
