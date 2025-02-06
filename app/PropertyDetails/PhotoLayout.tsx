@@ -181,7 +181,7 @@ const PhotoLayout: React.FC<PhotoLayoutProps> = ({ images }) => {
                   onClick={() => setShowModal(true)}
                 >
                   <Image
-                    src={images[4]}
+                    src={images[3]}
                     alt="More Images"
                     className="w-full h-full object-cover rounded-lg opacity-30"
                   />
