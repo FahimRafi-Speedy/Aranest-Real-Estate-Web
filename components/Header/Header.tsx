@@ -1,8 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import BottomText from "../Body/BottomText";
-import { ImLab } from "react-icons/im";
-import { TbGridDots } from "react-icons/tb";
+import {TbGridDots} from "react-icons/tb";
 
 const Header = () => {
   return (
@@ -10,12 +9,12 @@ const Header = () => {
       <ul className="flex items-center justify-end space-x-4 p-3 sm:p-4 text-sm mr-2">
         {/* Gmail link */}
         <li className="hover:underline">
-          <Link href="https://mail.google.com/mail/">Home</Link>
+          <Link href="/">Home</Link>
         </li>
 
         {/* Images link */}
         <li className="hover:underline">
-          <Link href="https://www.google.com/imghp?hl=en&authuser=0&ogbl">
+          <Link href="/contact/">
             Contact
           </Link>
         </li>

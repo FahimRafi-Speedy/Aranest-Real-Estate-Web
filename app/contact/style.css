@@ -1,29 +1,28 @@
-
 .button {
-  background: linear-gradient(to right, #000000, #434343);
-  color: white;
-  border: none;
-  border-radius: 50px;
-  padding: 0.8rem 1.5rem; 
-  margin-bottom: 25px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  width: 12rem; 
-  position: relative;
-  bottom: -1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-  transform-origin: center; 
+    background: linear-gradient(to right, #000000, #434343);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 0.8rem 1.5rem;
+    margin-bottom: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 12rem;
+    position: relative;
+    bottom: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    transform-origin: center;
 }
 
 .button:hover {
-  background: linear-gradient(to right, #2BA5FF, #53E6F1);
-  transform: translateX(-50%) scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to right, #2BA5FF, #53E6F1);
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .button:active {
-  transform: translateX(-50%) scale(0.95); 
+    transform: translateX(-50%) scale(0.95);
 }

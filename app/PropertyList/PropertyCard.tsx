@@ -1,34 +1,32 @@
-"use client"; // Ensure client-side rendering
+"use client";
 
-import {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Image from 'next/image';
-import {MdChevronLeft, MdChevronRight} from 'react-icons/md';
 import {FaHeart, FaPhoneAlt, FaRegHeart} from 'react-icons/fa';
-import {SiWhatsapp} from 'react-icons/si';
-import {useRouter} from 'next/navigation'; // Import useRouter from next/navigation for the app directory
-import "./Body.css";
+import {useRouter} from "next/navigation";
+import {MdChevronLeft, MdChevronRight} from "react-icons/md";
+import {SiWhatsapp} from "react-icons/si";
 
-const Card = () => {
-    // Property details stored in variables (hardcoded for now)
-    const property = {
-        title: "Riverside Residences",
-        location: "99 Pasir Ris Grove · D18",
-        type: "Condo · 2000 · 99 yrs",
-        beds: 3,
-        baths: 2,
-        sqft: 2561,
-        price: 1200000,
-        pricePerSqft: 754,
-        updated: "Updated 4 hrs ago",
+
+interface PropertyCardProps {
+    property: {
+        images: string[];
+        title: string;
+        location: string;
+        type: string;
+        beds: number;
+        baths: number;
+        sqft: number;
+        price: number;
+        pricePerSqft: number;
+        updated: string;
     };
+}
 
+const PropertyCard: React.FC<PropertyCardProps> = ({property}) => {
     const tags = ["REMOTE VIEWING", "NEGOTIABLE", "EXCLUSIVE"];
 
-    const images = [
-        '/property/house1.jpg',
-        '/property/house2.jpg',
-        '/property/house3.jpg',
-    ];
+    const images = property.images;
 
     const [currentImage, setCurrentImage] = useState(0);
     const [isLiked, setIsLiked] = useState(false);
@@ -47,7 +45,7 @@ const Card = () => {
     useEffect(() => {
         const interval = setInterval(nextImage, 3000);
         return () => clearInterval(interval);
-    }, []);
+    }, [nextImage]);
 
     const toggleHeart = () => {
         setIsLiked(!isLiked);
@@ -71,6 +69,37 @@ const Card = () => {
     }, []);
 
     return (
+        // <div
+        //     className="border border-gray-300 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition-transform duration-300 h-full flex flex-col">
+        //     <div className="relative h-48">
+        //         {/*     <Image
+        //             src={property.images[0]}
+        //             alt={property.title}
+        //             layout="fill"
+        //             objectFit="cover"
+        //         />*/}
+        //         <Image src={property.images[0]} alt={property.title} width={400} height={250}
+        //                className="object-cover w-full h-full rounded-t-lg inline-block"/>
+        //     </div>
+        //     <div className="p-4 flex-grow">
+        //         <h2 className="text-lg font-bold text-gray-900">{property.title}</h2>
+        //         <p className="text-sm text-gray-700 mb-4">{property.location}</p>
+        //         <div className="flex items-center text-gray-700">
+        //             <FaBed className="mr-1"/>
+        //             <span>{property.beds} beds</span>
+        //             <FaBath className="ml-4 mr-1"/>
+        //             <span>{property.baths} baths</span>
+        //         </div>
+        //         <p className="text-sm text-gray-700 mt-2">
+        //             {property.sqft} sqft | {formatCurrency(property.price)}
+        //         </p>
+        //     </div>
+        //     <div className="p-4 mt-auto border-t border-gray-200 bg-white">
+        //         <p className="text-sm text-gray-600">
+        //             Updated: {formatDate(property.updated)}
+        //         </p>
+        //     </div>
+        // </div>
         <div className="max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden my-6 relative">
 
             {/* Banner */}
@@ -213,4 +242,4 @@ const Card = () => {
     );
 };
 
-export default Card;
+export default PropertyCard;
