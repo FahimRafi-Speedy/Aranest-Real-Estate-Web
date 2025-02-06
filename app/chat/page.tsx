@@ -8,7 +8,7 @@ export default function ChatPage() {
     <div className="flex flex-col min-h-screen">
       <Header />
       <div className="flex flex-col items-center justify-center flex-grow mt-8 mb-8 m-2">
-        <Image src="/aranest.png" alt="Aranest Logo" width={200} height={200} className="mb-6" />
+        <Image src="/aranest-cut.png" alt="Aranest Logo" width={200} height={200} className="mb-6" />
         <Chat />
       </div>
       <Footer />

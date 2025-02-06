@@ -21,6 +21,16 @@ export default function Login() {
           className="h-full w-full object-cover rounded-tl-xl rounded-bl-xl"
         />
 
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.6)] to-transparent flex items-start p-4">
+          <Image
+              src="/aranest-cut.png"
+              alt="Aranest Logo"
+              height={200}
+              width={200}
+              className="mb-8 mt-4"
+          />
+        </div>
+
         {/* Gradient and Text at the Bottom */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[rgba(0,0,0,0.4)] flex items-end p-4 rounded-bl-xl rounded-tl-xl">
           <p className="text-white text-lg font-semibold">

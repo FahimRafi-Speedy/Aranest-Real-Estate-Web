@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import { FaEnvelope, FaPhone } from "react-icons/fa";
+import {useState} from "react";
+import {FaEnvelope, FaPhone} from "react-icons/fa";
+import Image from "next/image";
 
 const SearchAgent = () => {
     // Mock data for agents
@@ -56,7 +57,7 @@ const SearchAgent = () => {
                     placeholder="Search by name, email, or description..."
                     value={searchQuery}
                     onChange={handleSearch}
-                    className="w-full max-w-lg px-4 py-2 border border-black rounded-lg mb-6 focus:outline-none focus:ring-1 focus:ring-black"
+                    className="flex border mt-7 mb-6 px-5 py-2 border-gray-300 rounded-full items-center hover:shadow-md hover:scale-102 focus-within:shadow-lg focus-within:outline-none transition-transform duration-200 ease-in-out w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto"
                 />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -64,33 +65,47 @@ const SearchAgent = () => {
                     filteredAgents.map((agent) => (
                         <div
                             key={agent.id}
-                            className="border border-black rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition-transform duration-300"
+                            className="border border-gray-300 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition-transform duration-300 h-full flex flex-col"
                         >
-                            <div className="p-4">
-                                <h2 className="text-lg font-bold text-gray-900 mb-2">
-                                    {agent.name}
-                                </h2>
+                            <div className="p-4 flex-grow">
+                                <div className="flex items-center mb-2">
+                                    <Image
+                                        src={`/agents/${agent.id}.png`}
+                                        width={40}
+                                        height={40}
+                                        alt={agent.name}
+                                        className="w-10 h-10 rounded-full mr-4"
+                                    />
+                                    <h2 className="text-lg font-bold text-gray-900">
+                                        {agent.name}
+                                    </h2>
+                                </div>
                                 <p className="text-sm text-gray-700 mb-4">
                                     {agent.description}
                                 </p>
-                                <div className="flex justify-between items-center mt-4 text-gray-700">
+                            </div>
+
+                            {/* Fixed bottom section */}
+                            <div className="p-4 mt-auto border-t border-gray-200 bg-white">
+                                <div className="flex justify-between items-center text-gray-700">
                                     <a
                                         href={`mailto:${agent.email}`}
                                         className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors"
                                     >
-                                        <FaEnvelope size={18} />
+                                        <FaEnvelope size={18}/>
                                         <span>Email</span>
                                     </a>
                                     <a
                                         href={`tel:${agent.phone}`}
                                         className="flex items-center gap-2 text-green-600 hover:text-green-800 transition-colors"
                                     >
-                                        <FaPhone size={18} />
+                                        <FaPhone size={18}/>
                                         <span>Call</span>
                                     </a>
                                 </div>
                             </div>
                         </div>
+
                     ))
                 ) : (
                     <p className="text-center col-span-3 text-gray-600">
