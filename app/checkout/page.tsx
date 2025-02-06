@@ -7,9 +7,9 @@ import CheckoutForm from "@/app/checkout/CheckoutForm";
 import CartSummary from "@/app/checkout/CartSummary";
 
 const CheckoutPage = () => {
-    const [cartItems, setCartItems] = useState([
-        {name: "Basic Plan", price: "$9.99", quantity: 1},
-        {name: "Premium Plan", price: "$19.99", quantity: 1}
+    const [cartItems, setCartItems] = useState<{ name: string; price: number; quantity: number }[]>([
+        {name: "Basic Plan", price: 9.99, quantity: 1},
+        {name: "Premium Plan", price: 19.99, quantity: 1}
     ]);
 
     const handleCheckout = () => {
